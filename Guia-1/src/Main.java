@@ -17,7 +17,7 @@ c. Imprima ambos objetos por pantalla.
 d. Aumente el salario del empleado Carlos en un 15% e imprima en pantalla el
 salario anual del mismo.
  */
-
+asdasd
 public class Main {
     public static void main(String[] args) {
         Empleado empleado1 = new Empleado(23456345,"Carlos","Gutierrez",25000);
