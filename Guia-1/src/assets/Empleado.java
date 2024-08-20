@@ -16,22 +16,24 @@ d. Aumente el salario del empleado Carlos en un 15% e imprima en pantalla el
 salario anual del mismo.
  */
 
+import java.util.Scanner;
+
 public class Empleado {
     // Atributos
-    private double dni;
+    private String dni;
     private String nombre;
     private String apellido;
     private double salario;
 
-    // Contrusctor vacio
+    // Constructor vacio
     public Empleado() {
         this.dni = null;
         this.nombre = null;
         this.apellido = null;
         this.salario = 0;
     }
-
-    public Empleado(double dni, String nombre, String apellido, double salario) {
+    // Constructor lleno
+    public Empleado(String dni, String nombre, String apellido, double salario) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -39,7 +41,7 @@ public class Empleado {
     }
 
     // Getters
-    public double getDni() {
+    public String getDni() {
         return dni;
     }
 
@@ -56,7 +58,7 @@ public class Empleado {
     }
 
     // Setters
-    public void setDni(double dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 
@@ -74,8 +76,20 @@ public class Empleado {
 
     // Methods
 
-    public mostrarObjeto(){
-        System.out.println("assets.Empleado[dni="+dni+",nombre="+nombre+",apellido="+apellido+"salario="+salario);
+    public void mostrarObjeto(){
+        System.out.println("Empleado dni= "+dni+", nombre= "+nombre+", apellido= "+apellido+", salario= "+this.salario);
+    }
+
+    // PREGUNTAR AL PROFESOR.
+    public double aumentarsueldo(){
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print("Por favor ingrese el aumento: ");
+        double aumento = entrada.nextDouble();
+        entrada.nextLine();
+        entrada.close();
+
+        return (salario * (1 + (aumento/100)));
     }
 }
 
