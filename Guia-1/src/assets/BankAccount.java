@@ -1,7 +1,4 @@
 package assets;
-
-import java.util.Scanner;
-
 /*
 2. Modele el objeto que representa la cuenta de un banco, con identificador,
 nombre y balance. Considere los getters, setters y constructores necesarios.
@@ -62,26 +59,21 @@ public class BankAccount {
 
     // Methods
 
-    public void getCredito(){
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Ingrese el monto depositado: ");
-        double credito = input.nextInt();
-        input.nextLine();
+    public void getCredito(double credito){
         this.balance += credito;
-
-        setBalance(balance);
-        System.out.println("Su balance es de: "+balance);
-        input.close();
+        setBalance(this.balance);
     }
-    public void getDebito(){
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Ingrese el monto de debitar: ");
-        double debito = input.nextDouble();
-        input.nextLine();
-
+    public boolean getDebito(double debito){
         this.balance -= debito;
-        setBalance(balance);
+        if(this.balance<0){
+            this.balance += debito;
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    public String mostrarBalance(){
+        return ("Su balance es de: $"+this.balance);
     }
 }

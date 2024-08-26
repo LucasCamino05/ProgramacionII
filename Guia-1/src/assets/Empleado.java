@@ -15,9 +15,6 @@ c. Imprima ambos objetos por pantalla.
 d. Aumente el salario del empleado Carlos en un 15% e imprima en pantalla el
 salario anual del mismo.
  */
-
-import java.util.Scanner;
-
 public class Empleado {
     // Atributos
     private String dni;
@@ -76,20 +73,13 @@ public class Empleado {
 
     // Methods
 
-    public void mostrarObjeto(){
-        System.out.println("Empleado dni= "+dni+", nombre= "+nombre+", apellido= "+apellido+", salario= "+this.salario);
+    public String mostrarObjeto(){
+        return ("Empleado dni= "+this.dni+", nombre= "+this.nombre+", apellido= "+this.apellido+", salario= "+ this.salario);
     }
 
     // PREGUNTAR AL PROFESOR.
-    public double aumentarsueldo(){
-        Scanner entrada = new Scanner(System.in);
-
-        System.out.print("Por favor ingrese el aumento: ");
-        double aumento = entrada.nextDouble();
-        entrada.nextLine();
-        entrada.close();
-
-        return (salario * (1 + (aumento/100)));
+    public double aumentarsueldo(double aumento){
+        return (this.salario * (1 + (aumento/100)));
     }
 }
 
