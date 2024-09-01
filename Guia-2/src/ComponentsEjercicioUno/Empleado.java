@@ -1,22 +1,25 @@
-package Components;
+package ComponentsEjercicioUno;
 
 public class Empleado {
-    private int ID = 0;
+    private static int ID = 0;
     private int empleadoID;
     private String nombre;
     private double salario;
+    private int TipoEmpleado;
 
     // Constructores
     public Empleado() {
         this.empleadoID = ++ID;
         this.nombre = null;
         this.salario = 0;
+        this.TipoEmpleado =  0;
     }
 
-    public Empleado(String nombre, double salario) {
+    public Empleado(String nombre, double salario,int TipoEmpleado) {
         this.empleadoID = ++ID;
         this.nombre = nombre;
         this.salario = salario;
+        this.TipoEmpleado = TipoEmpleado;
     }
 
     // Getters
@@ -30,6 +33,10 @@ public class Empleado {
 
     public double getSalario() {
         return salario;
+    }
+
+    public int getTipoEmpleado() {
+        return TipoEmpleado;
     }
 
     // Setters

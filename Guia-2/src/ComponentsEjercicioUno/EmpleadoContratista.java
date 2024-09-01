@@ -1,7 +1,7 @@
-package Components;
+package ComponentsEjercicioUno;
 
 public class EmpleadoContratista extends Empleado{
-    private int horas;
+    protected int horas;
     private double tarifa;
 
     public EmpleadoContratista() {
@@ -10,7 +10,7 @@ public class EmpleadoContratista extends Empleado{
         this.horas = 0;
     }
     public EmpleadoContratista(String nombre, double salario, int horas, double tarifa) {
-        super(nombre, salario);
+        super(nombre, salario,3);
         this.horas = horas;
         this.tarifa = tarifa;
     }
@@ -22,6 +22,7 @@ public class EmpleadoContratista extends Empleado{
     public double getTarifa() {
         return tarifa;
     }
+
 
     public void setHoras(int horas) {
         this.horas = horas;
