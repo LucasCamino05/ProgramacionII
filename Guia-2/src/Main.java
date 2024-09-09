@@ -1,5 +1,5 @@
 import ComponentsEjercicioUno.*;
-
+import ComponentesEjercicioDos.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -59,7 +59,9 @@ public class Main {
         }while(opcion != 0);
     }
     public static void Ejercicio_Dos(Scanner input){
-        System.out.println("Sigo implementandome");
+        Autor autor1 = new Autor("Joshua","Bloch","joshua@email.com",'M');
+        Libros libro1 = new Libros("Effective Java",450,150,autor1);
+        libro1.
     }
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
